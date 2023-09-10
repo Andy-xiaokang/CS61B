@@ -48,8 +48,11 @@ public class DebugExercise2 {
         }
         int[] returnArray = new int[a.length];
         for (int i = 0; i < a.length; i += 1) {
-            int biggerValue = max(a[i], b[i]);
-            returnArray[i] = biggerValue;
+            if (b[i] >= a[i]){
+                returnArray[i] = b[i];
+            } else {
+                returnArray[i] = a[i];
+            }
         }
 
         return returnArray;
@@ -60,7 +63,7 @@ public class DebugExercise2 {
         int i = 0;
         int sum = 0;
         while (i < x.length) {
-            sum = sum + add(sum, x[i]);
+            sum = sum + x[i];
             i = i + 1;
         }
         return sum;
